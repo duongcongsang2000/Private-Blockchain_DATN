@@ -1,0 +1,12 @@
+.table-2{
+    word-wrap: break-word;width: 100%;margin-bottom: 1rem;color: #858796;
+}
+.table-2 .thead-light th{
+    color: #6e707e;background-color: #eaecf4;border-color: #e3e6f0;
+}
+.table-2 thead th{
+    vertical-align: bottom;border-bottom: 2px solid #e3e6f0;
+}
+.table-2 td, .table-2 th{
+    width: 10%;padding: 0.5rem;vertical-align: top;border-top: 1px solid #e3e6f0
+}

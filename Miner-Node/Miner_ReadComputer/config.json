@@ -1,0 +1,6 @@
+{
+    "host": "http://localhost:5555/data/write",
+    "sleep": 3,
+    "port": 3000,
+    "log_path": "C:\\Snort\\log\\alert.ids"
+}

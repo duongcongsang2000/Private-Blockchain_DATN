@@ -1,0 +1,4 @@
+psutil
+requests
+Flask
+flask-cors

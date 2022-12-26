@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="" id="hehe" style="width: 50%; height: 100vh; float: left; background-color: aqua;">
+    </div>
+    
+    <div class="" id="haha" style="width: 50%; height: 100vh; float: right;  background-color: bisque;">
+    </div>
+    <script>
+        var temperatureValue = [];
+        var humidityValue = [];
+
+        var hehe = document.getElementById("hehe");
+        var haha = document.getElementById("haha");
+
+        var strTem = "";
+        var strHu = "";
+        $(document).ready(function () {
+            getdata();
+        }); 
+
+        function getdata() {
+            // A URL returns JSON data.
+            var url = "http://178.128.127.228:1234/get";
+            
+            fetch(url)
+            .then(response => response.json())
+            .then(function(contents) {
+                contents.forEach(function(content){
+                    
+                    var nhietdo = content.temperature;
+                    var doam = content.humidity;
+
+                    strTem += `<h2>${nhietdo}</h2>`;
+                    temperatureValue.push(nhietdo);
+                    strHu += `<h2>${doam}</h2>`;
+                    humidityValue.push(doam);
+
+                    
+
+                    if(temperatureValue.length > 6) {
+                        temperatureValue.shift();
+                        console.log(temperatureValue);
+                    }
+
+                });
+              
+                // getdata();
+            })  
+            .catch(err => console.log(err));
+        }
+    </script>
+  </body>
+</html>

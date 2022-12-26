@@ -1,0 +1,2 @@
+note: dùng snmp lấy thông số cpu, ram,vượt ngưỡng thì đẩy lên transaction
+	-	Kết hợp với snort - MV WARE (alert .> thực hiện giao dịch
